@@ -1,0 +1,38 @@
+{
+  "name": "byte-parser",
+  "version": "1.0.0",
+  "description": "Parse byte string to byte number, e.g. 1.2 Kb -> 1228.8, Kb, Mb, Gb, Tb, Pb, Eb, Zb, Yb supported.",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "lint-staged": "lint-staged",
+    "test": "jest",
+    "build": "rimraf ./lib && tsc --module commonjs --outDir lib",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "byte-parser",
+    "parse-byte",
+    "file-size",
+    "size-parser"
+  ],
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "jest": "^26.4.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^3.9.7"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "collectCoverage": true,
+    "testRegex": "(/__tests__/.*\\.(test|spec))\\.ts$",
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ]
+  }
+}
